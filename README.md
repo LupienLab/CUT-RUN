@@ -3,13 +3,13 @@
 1. Download peak calling tool: https://github.com/FredHutch/SEACR
 2. Set tool path, project path, fastq path as following:
 
-cores
-projPath
-fastqdir
-seacr
-trimmomaticpath
-ref
-spikeInRef
+cores,
+projPath,
+fastqdir,
+seacr,
+trimmomaticpath,
+ref,
+spikeInRef,
 chromSize
 
 3. Submit the pipeline as following:
