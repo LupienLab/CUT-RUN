@@ -97,9 +97,18 @@ mkdir -p $projPath/peakCalling/SEACR
 
 bash $seacr $projPath/alignment/bedgraph/${histName}_bowtie2.fragments.normalized.bedgraph 0.05 non stringent $projPath/peakCalling/SEACR/${histName}_seacr_top0.05.peaks
 
-## 6. macs2 peak calling
-mkdir -p $projPath/peakCalling/macs
-macs2 callpeak -t $projPath/alignment/bam/${histName}_bowtie2.mapped.bam --outdir $projPath/peakCalling/macs -n ${histName} --broad -g hs --keep-dup all -f BAMPE -q 0.05 --tempdir tmp
+## 6. macs2 peak calling (EXtra peak calling)
+#mkdir -p $projPath/peakCalling/macs
+
+##NOTE:Below ratio is the ratio of the number of spike-in reads in the histone/TF alignment to the spike-in genome to the number of spike-in reads in IgG alignment to the spike-in genome.
+
+## For Histone marks
+#macs2 callpeak -t $projPath/alignment/bam/${histName}_bowtie2.mapped.bam  -c IgG_bamfile  --ratio Ratio --outdir $projPath/peakCalling/macs -n ${histName} -g hs --keep-dup all -f BAMPE -q 0.05 --tempdir tmp
+
+
+## For Histone marks
+#macs2 callpeak -t $projPath/alignment/bam/${histName}_bowtie2.mapped.bam  -c IgG_bamfile  --ratio Ratio --outdir $projPath/peakCalling/macs -n ${histName} --broad -g hs --keep-dup all -f BAMPE -q 0.05 --tempdir tmp
+
 
 # ## duplicates
 # ml picard/2.18.29-Java
