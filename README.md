@@ -18,7 +18,7 @@ sbatch -p himem -J cutrun --export=ALL -N 1 -n 5 --mem 80G -t 1-0 --wrap "bash C
 
 
 
-##Inspired from:
+# Inspired from:
 
 Zheng Y et al (2020). Protocol.io
 
